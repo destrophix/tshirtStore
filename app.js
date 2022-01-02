@@ -28,10 +28,12 @@ app.use(morgan("tiny"));
 
 const home = require("./routes/home");
 const user = require("./routes/user");
+const product = require("./routes/product");
 
 //router middleware
 app.use("/api/v1", home);
 app.use("/api/v1", user);
+app.use("/api/v1", product);
 
 app.get("/signuptest", (req, res) => {
   res.render("signupTest");

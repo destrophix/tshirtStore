@@ -1,8 +1,11 @@
-let bigPromise = (func) => (req, res, next) => {
-  Promise.resolve(func(req, res)).catch(next);
+let obj1 = {
+  _id: 1,
+  name: "rohit",
 };
 
-let fun = () => console.log("hello world");
+let obj2 = {
+  ...obj1,
+  id: obj1._id,
+};
 
-bigPromise(fun());
-console.log("google");
+console.log(obj2);
