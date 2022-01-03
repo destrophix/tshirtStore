@@ -1,0 +1,80 @@
+File Structure for the production app
+root
+    - config
+    - controllers
+    - middlewares
+    - models
+    - routes
+    - seeds
+    - utils
+    - .gitignore
+    - .env
+    - app.js/index.js/server.js
+
+Reading mongoose docs are important
+
+E-commerece App notes
+
+Models
+1. User 
+    - name
+    - email
+    - password
+    - photo { id, secure_url } 
+    - role
+    - resetPasswordToken
+    - resetPasswordExpiry
+    - createdAt
+
+    functions injected in the model
+    getJwtToken
+    pre - hook
+    comparePassword
+    getResetPasswordToken
+    
+
+2. Product
+    - name
+    - price
+    - description
+    - photos [ {id, secure_url} ]
+    - category
+    - brand
+    - stock
+    - ratings
+    - numberOfReviews
+    - reviews [user (model) , name, rating, comment]
+    - user (model)
+    - createdAt
+
+3. Order
+    - shippingInfo {  }
+    - user (model)
+    - paymentInfo {}
+    - taxAmount
+    - shippingAmount
+    - totalAmount
+    - orderStatus
+    - deliveredAt
+    - createdAt
+    - orderItems [ {
+        name,
+        quantity,
+        image[0],
+        price,
+        product (model)
+      } ...]
+
+
+User -> routes
+    - /signup
+    - /login
+    - /logout
+    - /forgotPassword
+    - /password/reset/:token
+    - /userDashboard
+    - /password/update
+    - /userDashboard/update
+    - /admin/users
+    - /admin/user/:id
+    
