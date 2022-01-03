@@ -1,11 +1,20 @@
-let obj1 = {
-  _id: 1,
-  name: "rohit",
-};
+let num = [1, 2, 3];
+let res = [];
 
-let obj2 = {
-  ...obj1,
-  id: obj1._id,
-};
+async function fun() {
+  num.forEach(async () => {
+    let promise = new Promise((resolve) => {
+      //   setTimeout(resolve("hello"), 1000);
+      resolve("hello");
+    });
+    let result = promise;
+    // let result = await cloudinary.uploader.upload(image.tempFilePath,{
+    //             folder: "users"
+    //         });
+    console.log(result);
+    res.push(result);
+  });
 
-console.log(obj2);
+  console.log(res);
+}
+fun();
